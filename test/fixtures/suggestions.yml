@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_1: 1
+  user_2: 1
+  accepted_by_user_1: false
+  accepted_by_user_2: false
+
+two:
+  user_1: 1
+  user_2: 1
+  accepted_by_user_1: false
+  accepted_by_user_2: false
