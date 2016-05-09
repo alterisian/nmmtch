@@ -1,33 +1,34 @@
-<%= form_for(@suggestion) do |f| %>
-  <% if @suggestion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@suggestion.errors.count, "error") %> prohibited this suggestion from being saved:</h2>
-
-      <ul>
-      <% @suggestion.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @suggestion, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :user_1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :user_1, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :user_2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :accepted_by_user_1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :accepted_by_user_1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :accepted_by_user_2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :accepted_by_user_2, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :user_1 %><br>
-    <%= f.number_field :user_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :user_2 %><br>
-    <%= f.number_field :user_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :accepted_by_user_1 %><br>
-    <%= f.check_box :accepted_by_user_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :accepted_by_user_2 %><br>
-    <%= f.check_box :accepted_by_user_2 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  suggestions_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
