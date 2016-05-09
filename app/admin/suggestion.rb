@@ -1,4 +1,5 @@
 ActiveAdmin.register Suggestion do
+  permit_params :user_1, :user_2, :accepted_by_user_1, :accepted_by_user_2
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
